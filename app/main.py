@@ -9,7 +9,7 @@ app = FastAPI()
 @app.on_event("startup")
 def on_startup():
     create_db_and_tables()
-    db = SessionLocal
+    db = SessionLocal()
     seed_data(db)
 
 app.include_router(class_router, prefix="/classes", tags=["Classes"])
